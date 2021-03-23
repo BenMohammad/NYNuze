@@ -6,8 +6,8 @@ import java.util.*
 
 data class DetailViewState(
         val isLoading: Boolean = false,
-        val error: String = "",
-        val title: String = "",
+        val error: String? = "",
+        val title: String? = "",
         val coverPhoto: String? = "",
         val author: String? = "",
         val published: String? = "",
