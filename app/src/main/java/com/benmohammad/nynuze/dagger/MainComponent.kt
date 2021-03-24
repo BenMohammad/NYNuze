@@ -16,10 +16,10 @@ import dagger.Component
 @Component(modules = [ContextModule::class, ApplicationModule::class, DatabaseModule::class, ViewModelModule::class])
 interface MainComponent {
 
-    fun inject(homeFragment: HomeFragment)
-    fun inject(detailsActivity: DetailsActivity)
-    fun inject(moviesFragment: MoviesFragment)
-    fun inject(scienceFragment: ScienceFragment)
-    fun inject(sportsFragment: SportsFragment)
+    fun injectHome(homeFragment: HomeFragment)
+    fun injectDetails(detailsActivity: DetailsActivity)
+    fun injectMovies(moviesFragment: MoviesFragment)
+    fun injectScience(scienceFragment: ScienceFragment)
+    fun injectSports(sportsFragment: SportsFragment)
 
 }
