@@ -11,12 +11,10 @@ import com.benmohammad.nynuze.data.repository.LocalRepository
 import com.benmohammad.nynuze.data.repository.RemoteRepository
 import com.benmohammad.nynuze.network.Lce
 import com.benmohammad.nynuze.viewState.NewsViewResult
-import com.benmohammad.nynuze.viewState.NewsViewState
 import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
 import java.util.*
 import javax.inject.Inject
-import kotlin.math.abs
 
 class SportsRepository @Inject constructor(private val localRepository: LocalRepository,
                                            private val remoteRepository: RemoteRepository,
