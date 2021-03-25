@@ -7,28 +7,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_marginBottom="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
             android:clipChildren="false"
-            app:cardCornerRadius="2dp"
-            app:cardElevation="2dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="6dp"
             app:cardUseCompatPadding="true"
-            app:layout_constrainedHeight="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent=".3"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            >
 
 
         <ImageView
+            android:layout_margin="2dp"
             android:id="@+id/iv_cover"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -36,35 +41,43 @@
 
         </com.google.android.material.card.MaterialCardView>
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="16dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.5">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_end"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="16dp" />
 
-        <TextView
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="2dp"
+                android:clipChildren="false"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="6dp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintTop_toBottomOf="@id/card"
+                >
+
+            <LinearLayout
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+            <TextView
             android:id="@+id/tv_title"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginTop="30dp"
-            app:layout_constraintEnd_toEndOf="@id/guideline_end"
-            app:layout_constraintStart_toStartOf="@id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@id/card"
+
             tools:text="This is Article Tile : Near Horizon" />
 
         <TextView
             android:id="@+id/author"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:drawableStart="@drawable/ic_pen_white"
@@ -72,14 +85,11 @@
             android:lines="1"
             android:gravity="center_vertical"
             android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="@id/guideline_end"
-            app:layout_constraintStart_toStartOf="@id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@id/tv_title"
             tools:text="Author : Nick Harris" />
 
         <TextView
             android:id="@+id/published"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:drawableStart="@drawable/ic_publish"
@@ -87,14 +97,11 @@
             android:gravity="center_vertical"
             android:textSize="14sp"
             android:lines="1"
-            app:layout_constraintEnd_toEndOf="@id/guideline_end"
-            app:layout_constraintStart_toStartOf="@id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@id/author"
             tools:text="Published On : 24 05 2020" />
 
         <TextView
             android:id="@+id/tv_link"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:drawableStart="@drawable/ic_link"
@@ -103,33 +110,44 @@
             android:textSize="14sp"
             android:textColor="#0000FF"
             android:lines="1"
-            app:layout_constraintEnd_toEndOf="@id/guideline_end"
-            app:layout_constraintStart_toStartOf="@id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@id/published"
             tools:text="www.newyorkTimes.come/v2/asian/politics" />
 
         <TextView
             android:id="@+id/tv_abstract"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:gravity="center_vertical"
             android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="@id/guideline_end"
-            app:layout_constraintStart_toStartOf="@id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@id/tv_link"
             tools:text="Abstract of Article" />
 
         <ProgressBar
             android:id="@+id/progress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            android:layout_gravity="center"/>
+
+            </LinearLayout>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <com.google.android.gms.ads.AdView
+            android:visibility="visible"
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-1865728617576864/3691618174">
+        </com.google.android.gms.ads.AdView>
+
+    </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

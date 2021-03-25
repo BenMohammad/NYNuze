@@ -15,6 +15,8 @@ import com.benmohammad.nynuze.viewState.DetailViewEffect
 import com.benmohammad.nynuze.viewState.DetailViewEvent
 import com.benmohammad.nynuze.viewState.DetailViewResult
 import com.benmohammad.nynuze.viewState.DetailViewState
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 import com.squareup.picasso.Picasso
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -46,6 +48,11 @@ class DetailsActivity: AppCompatActivity() {
         NyApp.getApp(this).mainComponent.injectDetails(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
+
+        MobileAds.initialize(this)
+        val adRequest = AdRequest.Builder().build()
+        adView.loadAd(adRequest)
+
         configureViewModel()
         init()
         attachStateObserver()
