@@ -1,6 +1,5 @@
 package com.benmohammad.nynuze.ui.movies
 
-import android.accessibilityservice.AccessibilityService
 import androidx.lifecycle.ViewModel
 import com.benmohammad.nynuze.network.Lce
 import com.benmohammad.nynuze.viewState.NewsViewEvent
@@ -41,33 +40,35 @@ class MovieViewModel @Inject constructor(private val moviesRepository: MoviesRep
     }
 
 
-    private fun Observable<Lce<out NewsViewResult>>.resultToViewState():Observable<NewsViewState> {
+    private fun Observable<Lce<out NewsViewResult>>.resultToViewState(): Observable<NewsViewState> {
         return scan(NewsViewState()) { vs, result ->
-            when(result) {
+            when (result) {
                 is Lce.Content -> {
-                    when(result.packet) {
-                        is  NewsViewResult.ScreenLoadResult -> {
-                            vs.copy(isLoading = false, isEmpty = false, adapterList = result.packet.list, error = "")
-                        } else  -> {
-                            error("invalid event result")
+                    when (result.packet) {
+                        is NewsViewResult.ScreenLoadResult -> {
+                            vs.copy(isLoading = false, isEmpty = false,adapterList = result.packet.list, error = "")
+                        }
+                        else -> {
+                            error("invalid event result!!")
                         }
                     }
                 }
+
                 is Lce.Loading -> {
                     vs.copy(isLoading = true, error = "")
                 }
 
                 is Lce.Error -> {
-                    when(result.packet) {
+                    when (result.packet) {
                         is NewsViewResult.ScreenLoadResult -> {
-                            if(result.packet.list.isEmpty()) {
-                                vs.copy(isLoading = false, isEmpty = true, error = result.packet.error)
-                            } else {
-                                vs.copy(isLoading = false, error = result.packet.error)
+                            if(result.packet.list.isEmpty()){
+                                vs.copy(isLoading = false, isEmpty = true,error = result.packet.error)
+                            }else{
+                                vs.copy(isLoading = false,error = result.packet.error)
                             }
                         }
                         else -> {
-                            error("invalid event result")
+                            error("invalid event result!!")
                         }
                     }
                 }

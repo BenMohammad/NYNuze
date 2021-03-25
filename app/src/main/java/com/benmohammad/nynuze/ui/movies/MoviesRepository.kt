@@ -33,7 +33,7 @@ class MoviesRepository @Inject constructor(private val localRepository: LocalRep
                         }
                     }.startWith(Lce.Loading())
         } else {
-            return remoteRepository.fetchHomeNews()
+            return remoteRepository.fetchMovieNews()
                     .subscribeOn(Schedulers.io())
                     .observeOn(Schedulers.io())
                     .map {
@@ -89,6 +89,6 @@ class MoviesRepository @Inject constructor(private val localRepository: LocalRep
     }
 
     private fun shouldFetch(): Boolean {
-        return (Calendar.getInstance().timeInMillis) - (sessionManager.lastFetchTimeMovieNews ?: 0L) > FETCH_TIME_OUT
+        return (Calendar.getInstance().timeInMillis - (sessionManager.lastFetchTimeMovieNews ?: 0L) > FETCH_TIME_OUT)
     }
 }

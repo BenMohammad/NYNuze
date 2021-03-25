@@ -11,25 +11,30 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/iv_cover"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:clipChildren="false"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="2dp"
+            app:cardUseCompatPadding="true"
             app:layout_constrainedHeight="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent=".3"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
 
         <ImageView
-            android:id="@+id/back_button"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/ic_arrow_back"
-            android:padding="10dp"
-            android:background="?android:attr/selectableItemBackgroundBorderless"
-            app:layout_constraintStart_toStartOf="@id/guideline_start"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:id="@+id/iv_cover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+             />
+
+        </com.google.android.material.card.MaterialCardView>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_start"
@@ -54,7 +59,7 @@
             android:layout_marginTop="30dp"
             app:layout_constraintEnd_toEndOf="@id/guideline_end"
             app:layout_constraintStart_toStartOf="@id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@id/iv_cover"
+            app:layout_constraintTop_toBottomOf="@id/card"
             tools:text="This is Article Tile : Near Horizon" />
 
         <TextView
@@ -62,7 +67,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:drawableStart="@drawable/ic_pen"
+            android:drawableStart="@drawable/ic_pen_white"
             android:drawablePadding="20dp"
             android:lines="1"
             android:gravity="center_vertical"

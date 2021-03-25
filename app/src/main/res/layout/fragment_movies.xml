@@ -17,14 +17,14 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/list_item"
             android:padding="5dp"
-            android:clipToPadding="false"
+            android:clipToPadding="true"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <LinearLayout
-        android:id="@+id/empty_view_movies"
+        android:id="@+id/empty_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -44,6 +44,7 @@
             android:maxWidth="250dp"
             android:textSize="14sp"
             android:text="@string/something_went_wrong_pull_to_refresh"/>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -61,18 +61,9 @@ class SportsFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        insetWindow()
         init()
     }
 
-    private fun insetWindow() {
-        cl_sports.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_FULLSCREEN)
-        cl_sports.setOnApplyWindowInsetsListener{v, insets ->
-            rv_sports.setPadding(0, insets.systemWindowInsetTop, 0, 0)
-            cl_sports.setOnApplyWindowInsetsListener(null)
-            insets.consumeSystemWindowInsets()
-        }
-    }
 
     private fun init() {
         rv_sports.adapter = newsAdapter

@@ -3,15 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:padding="2dp"
+    android:layout_marginBottom="2dp">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:clipChildren="true"
-        app:cardCornerRadius="4dp"
-        app:cardElevation="0dp"
+        android:layout_margin="4dp"
+        android:clipChildren="false"
+        app:cardCornerRadius="2dp"
+        app:cardElevation="2dp"
+        app:cardUseCompatPadding="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -41,7 +44,7 @@
                 android:id="@+id/tv_author"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_pen"
+                android:drawableStart="@drawable/ic_pen_white"
                 android:drawablePadding="10dp"
                 android:gravity="center_vertical"
                 android:paddingStart="10dp"
