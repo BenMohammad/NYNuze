@@ -1,7 +1,8 @@
-package com.benmohammad.nynuze
+package com.benmohammad.nynuze.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.benmohammad.nynuze.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
