@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">NYNuze</string>
     <string name="something_went_wrong_pull_to_refresh">Pull to Refresh.....</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_science">Science</string>
+    <string name="menu_movies">Movies</string>
+    <string name="menu_sports">Sports</string>
 </resources>

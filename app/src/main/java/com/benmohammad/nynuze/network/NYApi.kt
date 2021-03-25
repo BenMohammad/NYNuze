@@ -7,17 +7,17 @@ import retrofit2.http.Query
 
 interface NYApi {
     @GET("home.json")
-    fun fetchHomeNews(@Query("api_key") apiKey: String): Single<NewsResponse>
+    fun fetchHomeNews(@Query("api-key") apiKey: String): Single<NewsResponse>
 
 
     @GET("movies.json")
-    fun fetchMovieNews(@Query("api_key") apiKey: String): Single<NewsResponse>
+    fun fetchMovieNews(@Query("api-key") apiKey: String): Single<NewsResponse>
 
 
     @GET("science.json")
-    fun fetchScienceNews(@Query("api_key") apiKey: String): Single<NewsResponse>
+    fun fetchScienceNews(@Query("api-key") apiKey: String): Single<NewsResponse>
 
 
     @GET("sports.json")
-    fun fetchSportsNews(@Query("api_key") apiKey: String): Single<NewsResponse>
+    fun fetchSportsNews(@Query("api-key") apiKey: String): Single<NewsResponse>
 }

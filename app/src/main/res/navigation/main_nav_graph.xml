@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph.xml"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.benmohammad.nynuze.ui.home.HomeFragment"
+        android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/movies"
+        android:name="com.benmohammad.nynuze.ui.movies.MoviesFragment"
+        android:label="MoviesFragment" />
+    <fragment
+        android:id="@+id/science"
+        android:name="com.benmohammad.nynuze.ui.science.ScienceFragment"
+        android:label="ScienceFragment" />
+    <fragment
+        android:id="@+id/sports"
+        android:name="com.benmohammad.nynuze.ui.sports.SportsFragment"
+        android:label="SportsFragment" />
+</navigation>

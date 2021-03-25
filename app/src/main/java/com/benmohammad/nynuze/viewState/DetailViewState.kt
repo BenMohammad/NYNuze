@@ -18,7 +18,7 @@ data class DetailViewState(
         var formattedDate = ""
         if(dateTotFormat.isNotEmpty() && dateTotFormat != "null") {
             val inputFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault())
-            val outputFormat = SimpleDateFormat("dd MM tt HH:mm", Locale.getDefault())
+            val outputFormat = SimpleDateFormat("dd MM yyyy HH:mm", Locale.getDefault())
             val date = inputFormat.parse(dateTotFormat)
             formattedDate = outputFormat.format(date)
         }

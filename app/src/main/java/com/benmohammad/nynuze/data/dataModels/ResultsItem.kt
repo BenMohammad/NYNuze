@@ -3,7 +3,7 @@ package com.benmohammad.nynuze.data.dataModels
 import com.google.gson.annotations.SerializedName
 
 data class ResultsItem(
-        @SerializedName("sebsection")
+        @SerializedName("subsection")
         val subsection: String = "",
         @SerializedName("item_type")
         val itemType: String = "",
@@ -14,7 +14,7 @@ data class ResultsItem(
         @SerializedName("title")
         val title: String = "",
         @SerializedName("des_facet")
-        val desFacet: String = "",
+        val desFacet: List<String>?,
         @SerializedName("uri")
         val uri: String = "",
         @SerializedName("url")

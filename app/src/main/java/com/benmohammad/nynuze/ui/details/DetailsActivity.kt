@@ -128,7 +128,7 @@ class DetailsActivity: AppCompatActivity() {
     private fun renderViewState(it: DetailViewState?) {
         if(it?.isLoading == true) progress.visibility = View.VISIBLE
         else progress.visibility = View.INVISIBLE
-        if(it?.coverPhoto.isNullOrEmpty()) {
+        if(!it?.coverPhoto.isNullOrEmpty()) {
             Picasso.get()
                 .load(it?.coverPhoto)
                 .fit()
